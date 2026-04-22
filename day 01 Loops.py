@@ -4,24 +4,24 @@
 #     print (i)
 
 #2.prnting all the prime and non prime numbers from 1 to 100
-# for i in range(100):
-#     count=2
-#     is_prime=True
-#     if i<=1:
-#         continue;
-#     else:
-#         while count*count<=i:
-#         # #(this line is written because it will check untill the square root of the number 
-#         #     for we are checking the prime)
-#             if i%count==0:
-#                 is_prime=False
-#                 break;
-#             else:
-#                 count+=1
-#     if is_prime==True:
-#         print(i," is prime number!")
-#     else:
-#         print(i," is not a prime number!")
+for i in range(100):
+    count=2
+    is_prime=True
+    if i<=1:
+        continue;
+    else:
+        while count*count<=i:
+        # #(this line is written because it will check untill the square root of the number 
+        #     for we are checking the prime)
+            if i%count==0:
+                is_prime=False
+                break;
+            else:
+                count+=1
+    if is_prime==True:
+        print(i," is prime number!")
+    else:
+        print(i," is not a prime number!")
 
 #3.Patterns-----------------------------------
 # *
