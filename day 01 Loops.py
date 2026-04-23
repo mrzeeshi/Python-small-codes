@@ -1,5 +1,5 @@
 # ---------------------- Loops Practice File ----------------------
-
+#hello there whats going on here
 # 1. Printing natural numbers from 0 to 10
 for i in range(11):
     print(i)
@@ -117,3 +117,9 @@ for row in range(rows):
         counter += 1
         col += 1
     print()
+#7. Printing all the even numbers from 1 to 100
+for i in range(1, 101):
+    if i % 2 == 0:
+        print(i)
+    else:
+        continue
