@@ -1,5 +1,7 @@
 # ---------------------- Loops Practice File ----------------------
+#Practicing the questions on the LOOPS...
 #hello there whats going on here
+print("Practicing the basic loops concepts...")
 # 1. Printing natural numbers from 0 to 10
 for i in range(11):
     print(i)
