@@ -39,16 +39,16 @@
 # # 4.finally
 # #     no matter exeption accurs or not this code will run
 
-# try:
-#     num1=int(input("enter the first number"))
-#     num2=int(input("enter the second number"))
-#     print("ans",num1/num2)
-# except Exception as e:
-#     print("this exception happened ",e)
-# else:
-#     print("the code ran successfully without any errors")
-# finally:
-#     print("done...")
+try:
+    num1=int(input("enter the first number"))
+    num2=int(input("enter the second number"))
+    print("ans",num1/num2)
+except Exception as e:
+    print("this exception happened ",e)
+else:
+    print("the code ran successfully without any errors")
+finally:
+    print("done...")
 
 # # We can also make our own exceptions like below I will try to make an exception named as lowage Exception
 class LowAgeException(Exception):
