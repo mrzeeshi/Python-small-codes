@@ -4,6 +4,7 @@
 # This is the basic practice file in which we will try to make the arrays using the numpy
 
 import numpy as np
+import random
 arr=np.array([1,2,3,4,5,6])
 print(arr)
 
@@ -34,4 +35,115 @@ print("\n The array having the dimensions...\n ",zero_array,"\n Dimensions: ",ze
 print(f"\nThe size of \n{zero_array} is {zero_array.size}")
 
 #Now we will try to change the shape of an array
+print("\n Reshaping the array...")
 print(f"\n Array Before: \n{arr}\n Array After: \n {arr.reshape(2,3)}")
+
+
+# Now as the practice we will try to make the tik tak toe game
+
+tic_tac_toe = np.array([1,2,3,4,5,6,7,8,9])
+tic_tac_toe = tic_tac_toe.reshape(3,3)
+
+print("="*20)
+print("TIC TAC TOE GAME...")
+print("You = 0 | Computer = 1")
+print("Choose box number (1-9)")
+
+while True:
+    print("\n")
+    print(tic_tac_toe)
+
+    # WIN CONDITIONS (Computer = 1)
+    if ((tic_tac_toe[0,0]==1 and tic_tac_toe[1,0]==1 and tic_tac_toe[2,0]==1) or
+        (tic_tac_toe[0,0]==1 and tic_tac_toe[0,1]==1 and tic_tac_toe[0,2]==1) or
+        (tic_tac_toe[1,0]==1 and tic_tac_toe[1,1]==1 and tic_tac_toe[1,2]==1) or
+        (tic_tac_toe[2,0]==1 and tic_tac_toe[2,1]==1 and tic_tac_toe[2,2]==1) or
+        (tic_tac_toe[0,0]==1 and tic_tac_toe[1,1]==1 and tic_tac_toe[2,2]==1)):
+        print("Computer Won!")
+        break
+
+    # WIN CONDITIONS (User = 0)
+    elif ((tic_tac_toe[0,0]==0 and tic_tac_toe[1,0]==0 and tic_tac_toe[2,0]==0) or
+          (tic_tac_toe[0,0]==0 and tic_tac_toe[0,1]==0 and tic_tac_toe[0,2]==0) or
+          (tic_tac_toe[1,0]==0 and tic_tac_toe[1,1]==0 and tic_tac_toe[1,2]==0) or
+          (tic_tac_toe[2,0]==0 and tic_tac_toe[2,1]==0 and tic_tac_toe[2,2]==0) or
+          (tic_tac_toe[0,0]==0 and tic_tac_toe[1,1]==0 and tic_tac_toe[2,2]==0)):
+        print("You Won!")
+        break
+
+    # CHECK DRAW
+    elif np.all((tic_tac_toe == 0) | (tic_tac_toe == 1)):
+        print("Game Draw!")
+        break
+
+    # ================= USER MOVE =================
+    while True:
+        try:
+            user = int(input("Enter position (1-9): "))
+
+            # mapping manual (your style)
+            if user == 1 and tic_tac_toe[0,0] not in [0,1]:
+                tic_tac_toe[0,0] = 0
+                break
+            elif user == 2 and tic_tac_toe[0,1] not in [0,1]:
+                tic_tac_toe[0,1] = 0
+                break
+            elif user == 3 and tic_tac_toe[0,2] not in [0,1]:
+                tic_tac_toe[0,2] = 0
+                break
+            elif user == 4 and tic_tac_toe[1,0] not in [0,1]:
+                tic_tac_toe[1,0] = 0
+                break
+            elif user == 5 and tic_tac_toe[1,1] not in [0,1]:
+                tic_tac_toe[1,1] = 0
+                break
+            elif user == 6 and tic_tac_toe[1,2] not in [0,1]:
+                tic_tac_toe[1,2] = 0
+                break
+            elif user == 7 and tic_tac_toe[2,0] not in [0,1]:
+                tic_tac_toe[2,0] = 0
+                break
+            elif user == 8 and tic_tac_toe[2,1] not in [0,1]:
+                tic_tac_toe[2,1] = 0
+                break
+            elif user == 9 and tic_tac_toe[2,2] not in [0,1]:
+                tic_tac_toe[2,2] = 0
+                break
+            else:
+                print("Invalid move! Try again.")
+
+        except:
+            print("Enter a valid number!")
+
+    # ================= COMPUTER MOVE =================
+    while True:
+        myNo = random.randint(1,9)
+
+        if myNo == 1 and tic_tac_toe[0,0] not in [0,1]:
+            tic_tac_toe[0,0] = 1
+            break
+        elif myNo == 2 and tic_tac_toe[0,1] not in [0,1]:
+            tic_tac_toe[0,1] = 1
+            break
+        elif myNo == 3 and tic_tac_toe[0,2] not in [0,1]:
+            tic_tac_toe[0,2] = 1
+            break
+        elif myNo == 4 and tic_tac_toe[1,0] not in [0,1]:
+            tic_tac_toe[1,0] = 1
+            break
+        elif myNo == 5 and tic_tac_toe[1,1] not in [0,1]:
+            tic_tac_toe[1,1] = 1
+            break
+        elif myNo == 6 and tic_tac_toe[1,2] not in [0,1]:
+            tic_tac_toe[1,2] = 1
+            break
+        elif myNo == 7 and tic_tac_toe[2,0] not in [0,1]:
+            tic_tac_toe[2,0] = 1
+            break
+        elif myNo == 8 and tic_tac_toe[2,1] not in [0,1]:
+            tic_tac_toe[2,1] = 1
+            break
+        elif myNo == 9 and tic_tac_toe[2,2] not in [0,1]:
+            tic_tac_toe[2,2] = 1
+            break
+        
