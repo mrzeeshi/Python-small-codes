@@ -1,3 +1,9 @@
+#In this file I practiced on the main topic of OOPs known as inheritance and covered main topics like method overriding etc
+#First is the simple practice by making the animal class and its childeren which is commented out and below this class is "Mini Library Management Systme Project"
+#The project has a lot of bugs but is running and also I am still learning so I will focus on those bugs later
+#To run these practice class comment out the Project code and to run the project code comment out this practice animal class and its childeren for better output(clean).
+#Thank You So Much........:)
+
 # class animal:
 #     def legs(self):
 #         print("Has four legs..")
@@ -107,7 +113,7 @@ elif choice==2:
     student1=student(name,cell_no,email,type)
     studentt=True
     while studentt:
-        print("1.See Profile \n 2.See All Books \n 3.Borrow A Book \n 4.Return A Book 5.Exit")
+        print("1.See Profile \n 2.See All Books \n 3.Borrow A Book \n 4.Return A Book\n 5.Exit")
         student_choice=int(input("Enter Your Choice....."))
         if student_choice==1:
             student1.see_profile()
