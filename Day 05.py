@@ -80,7 +80,7 @@ class student(person):
         print(f"{book} returned successfully...")
 
 
-print("Library ...................")
+print("Library .....................")
 name=input("What is your name? ")
 cell_no=input("What is your cell phone number ?")
 email=input("What is your email ?")
