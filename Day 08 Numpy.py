@@ -38,6 +38,22 @@ print(f"\nThe size of \n{zero_array} is {zero_array.size}")
 print("\n Reshaping the array...")
 print(f"\n Array Before: \n{arr}\n Array After: \n {arr.reshape(2,3)}")
 
+#The next main topic in the numpy library is the indexing and slicing,like some of the operations performed on the numpy arrays
+arrr=np.array([1,2,3,4,5,6])
+new_array=arrr[1:3]
+print(f"The original array :{arrr} \n New array by slicing: {new_array}")
+
+print(f"Now if we try to change any elements of {new_array} it will make the changes to our original array {arr}z\n and it is given below the "
+      "first index of the both arrays will be set to 99 when it is changed in new array")
+new_array[0]=99
+print(f"The original array : {arr} \n The array whose index was changed : {new_array} and now after change the original array: {arrr}")
+print("Now to avoid that issue of coming change in the original array if new array sliced from it is changed is due to the fact that the "
+      "new array we make by slicing is actualy the referance of the original array so both are changed and this issue we can handle by using the "
+      " copy method of the numpy library.")
+new_array2=arrr[1:3].copy()
+print(f"Now the original array is {arr} and the new of its copy is {new_array2} \n now making the index 0 of copy equal to 1 \n let's see what happens"
+      f" {new_array2}")
+
 
 # Now as the practice we will try to make the tik tak toe game
 
