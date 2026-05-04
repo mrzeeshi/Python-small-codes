@@ -1,0 +1,5 @@
+No.            1
+Name     Zeeshan
+Age           20
+Marks         50
+Name: 0, dtype: object2,Zeeshan,20,50
