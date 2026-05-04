@@ -7,8 +7,8 @@
 import pandas as pd
 first_data=pd.DataFrame({
     'Names':["Ali","Zeeshan","Roshan"],
-    'ages':[20,30,23],
-    'salaries':[20000,30000,40000]
+    'Ages':[20,30,23],
+    'Salaries':[20000,30000,40000]
 })
 print(first_data)
 
@@ -22,3 +22,13 @@ first_data.loc[4] = ["Tahir", 20, 30000]
 first_data.loc[5] = ["Sammar", 18, 25000]
 
 print("Our dataset after adding the three new lines: \n ",first_data)
+#We can also add a column as given below
+first_data['Heights']=[7.6,5,6,5.3,7,5.6]
+print("Our dataset after adding the new column named as Heights: \n",first_data)
+
+#Now we can also use some filters like 
+print("Names and salaries of individuals whose salaries are greater than 30000: \n",first_data.loc[first_data['Salaries']>30000,['Names','Salaries']])
+
+#Now we will try to update the values
+first_data.loc[first_data['Salaries'] > 20000, 'Salaries'] = first_data['Salaries'] + 5000
+print("The persons who have the ages greater than 20 will get the increment of 5000 in their salaries: \n",first_data)
