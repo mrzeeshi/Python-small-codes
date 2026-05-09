@@ -5,6 +5,7 @@
 #In order to run the pandas code you have to install it using this command --> pip install pandas
 
 import pandas as pd
+import random
 first_data=pd.DataFrame({
     'Names':["Ali","Zeeshan","Roshan"],
     'Ages':[20,30,23],
@@ -57,3 +58,29 @@ df.info()
 df.dropna(inplace=True)
 print("After dropping the rows and making the changes \n ")
 df.info()
+
+#Now we will try to change datatype of the some columns as shown below
+#Currently duration is int type and we will try to convert it to the float
+df['Duration']=df['Duration'].astype(float)
+df.info()
+
+#You see from the output that we have converted the datatype of the duration from the int to float
+print(df.head(20))
+
+#Now we will try to edit or remove the values that seem to be incorrect like the workout.Nobody can do the workout of 300 minutes so we have to make it a random number that is in the range of 120 for every duration that is more than 120 minutes so we do it as follows
+for i in df.index:
+    if df.loc[i,"Duration"]>120:
+        df.loc[i,"Duration"]=random.uniform(1,120)
+print(df.to_string())
+
+#Now you can see that no workout duration is more than the 120 minutes now if we want to make changes to file we write below code you can uncomment it 
+# df.to_csv('data.csv',index=False)
+
+#Now we will try to fill some details to the empty rows
+df.fillna(random.uniform(1,50))
+print(df.to_string())
+#But as we had already droped the empty lines so it will not do entry as there are no empty rows
+#And if we want to give the different values to the different collumns than we use the following code
+df.fillna({'Duration':100,
+           'Pulse':50},
+           inplace=True)
