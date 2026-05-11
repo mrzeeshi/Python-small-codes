@@ -127,6 +127,7 @@ print(df.groupby("Calories")["Duration"].describe())
 
 #so it groups all the rows that have the same values of calories and then it returns the description of the Duration columns for those similar values of the calories
 #we can use it as below that will return the description of the groups of the rows that are similar on the bases of the columns having the similar values which we are combining by using the group by function
+<<<<<<< HEAD
 print(df.groupby(["Duration", "Calories"]).describe())
 
 print("Here is the mean of the values \n",df.mean())
@@ -135,3 +136,6 @@ print("Here is the mode of the values \n",df.mode())
 #mode gives us the most repeated values in our dataset
 print("Here is written the median of the values \n",df.median())
 #median gives us the values of center row if there are odd numbers of rows and mean of two center rows if there are the even numbers of rows
+=======
+print(df.groupby(["Duration", "Calories"]).describe())
+>>>>>>> 0d6fb63e79db30f5bf3ed839c8ecf89db988fb0a
