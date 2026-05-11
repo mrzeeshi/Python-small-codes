@@ -52,7 +52,7 @@ print("Now to avoid that issue of coming change in the original array if new arr
       " copy method of the numpy library.")
 new_array2=arrr[1:3].copy()
 print(f"Now the original array is {arr} and the new of its copy is {new_array2} \n now making the index 0 of copy equal to 1 \n let's see what happens"
-      f" {new_array2}")
+      f"copy array after change: {new_array2}\n Original array: {arrr} \n so you see there is no change in the original array")
 
 
 # Now as the practice we will try to make the tik tak toe game
