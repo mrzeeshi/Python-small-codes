@@ -3,7 +3,7 @@
 #The dataframe is like the 2d array
 #Below are the practice questions done on the pandas library
 #In order to run the pandas code you have to install it using this command --> pip install pandas
-
+import matplotlib as plt 
 import pandas as pd
 import random
 first_data=pd.DataFrame({
@@ -84,3 +84,47 @@ print(df.to_string())
 df.fillna({'Duration':100,
            'Pulse':50},
            inplace=True)
+#We can also use the mean average and mode functions to fill these blank rows and its codes are given below but they will give no outputs as we have already removed the empty lines
+#1.Mean
+
+df = pd.read_csv('data.csv')
+
+x = df["Calories"].mean()
+
+df.fillna({"Calories": x}, inplace=True)
+
+#2.Median
+
+df = pd.read_csv('data.csv')
+
+x = df["Calories"].median()
+
+df.fillna({"Calories": x}, inplace=True)
+#3.Mode
+
+df = pd.read_csv('data.csv')
+
+x = df["Calories"].mode()[0]
+
+df.fillna({"Calories": x}, inplace=True)
+
+#Now we will try to sort the values in the pandas dataframes
+
+df.sort_values(by='Duration',ascending=True,inplace=True)
+print("showing the values sorted on the base workout in the ascending order...")
+print(df.head(10))
+
+
+#Today in this lab we will try to understand some more concepts about the pandas like the data values and the describe function of the 
+# pandas and the EDA Key operations etc
+print(df.describe())
+
+#You can see from the results of the above output that there are the mean count std min max and some percentile values that help us very much in performing some of the mathematical operations on the data as shown below
+#And the percentile values we got are called the quantile values and we can define the skew from these quantile values
+#also if we want we can also apply the describe fundtion on the one or two or the more columns as much as we want as shown below
+
+print(df.groupby("Calories")["Duration"].describe())
+
+#so it groups all the rows that have the same values of calories and then it returns the description of the Duration columns for those similar values of the calories
+#we can use it as below that will return the description of the groups of the rows that are similar on the bases of the columns having the similar values which we are combining by using the group by function
+print(df.groupby(["Duration", "Calories"]).describe())
