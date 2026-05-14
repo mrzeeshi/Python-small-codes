@@ -144,3 +144,23 @@ df['ismaxpulse']=df["Pulse"].map(
     lambda x:"Yes" if x>100 else "No"
 )
 print("\n",df.head)
+#Now we will try to use the pipe functions
+#Basically the pipe function is the function in which we run more  functions at a time and almost many of them are linked to each other
+#Like below we will be using this pipe function to add some 5 min to Duration in +duration column and subtract 5 min from Duration column to the -duration column
+#Shown below
+import pandas as pd
+
+def add_duration(df):
+    df["+duration"] = df["Duration"] + 5.0
+    return df
+
+def sub_duration(df):
+    df["-duration"] = df["Duration"] - 5.0
+    return df
+
+df = df.pipe(add_duration).pipe(sub_duration)
+print(df.head())
+
+#We can also rank the data based on the values like increasing order decreasing order dense etc like as shown below
+df["Rank"]=df[["Calories"]].rank(method="dense")
+print(df.head())
