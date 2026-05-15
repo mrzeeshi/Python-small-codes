@@ -163,4 +163,4 @@ print(df.head())
 
 #We can also rank the data based on the values like increasing order decreasing order dense etc like as shown below
 df["Rank"]=df[["Calories"]].rank(method="dense")
-print(df.head())
+print(df.to_string)
